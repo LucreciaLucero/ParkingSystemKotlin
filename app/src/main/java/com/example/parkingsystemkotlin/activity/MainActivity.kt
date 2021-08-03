@@ -23,7 +23,10 @@ class MainActivity : AppCompatActivity(), DialogFragmentParkingLotsListener {
     }
 
     private fun setListeners() {
-        binding.buttonMainParkingSize.setOnClickListener { presenter.onButtonPressed() }
+        with(binding) {
+            buttonMainParkingSize.setOnClickListener { presenter.onButtonPressed() }
+            buttonMainAddNewReservation.setOnClickListener { presenter.onButtonReservationPressed() }
+        }
     }
 
     override fun listenerSetParkingLotsOnClick(parkingLots: Int) {

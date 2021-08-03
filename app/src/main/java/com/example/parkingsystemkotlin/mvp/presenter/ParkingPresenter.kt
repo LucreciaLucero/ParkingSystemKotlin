@@ -13,4 +13,8 @@ class ParkingPresenter(private var model: ParkingContract.ModelContract, private
         model.setParkingAvailables(parkingLots)
         view.showMessageOfParkingLots(model.getParkingAvailables())
     }
+
+    override fun onButtonReservationPressed() {
+        view.showReservationScreen()
+    }
 }
