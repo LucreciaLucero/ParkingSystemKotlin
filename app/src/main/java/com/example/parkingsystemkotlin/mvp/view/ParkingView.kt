@@ -2,6 +2,7 @@ package com.example.parkingsystemkotlin.mvp.view
 
 import android.app.Activity
 import com.example.parkingsystemkotlin.R
+import com.example.parkingsystemkotlin.activity.ReservationActivity
 import com.example.parkingsystemkotlin.fragment.DialogFragmentParkingLots
 import com.example.parkingsystemkotlin.mvp.contract.ParkingContract
 import com.example.parkingsystemkotlin.mvp.view.base.ActivityView
@@ -19,5 +20,9 @@ class ParkingView(activity: Activity) : ActivityView(activity), ParkingContract.
         context?.let {
             it.toast(it.getString(R.string.toast_main_parking_size, parkingsAvailable))
         }
+    }
+
+    override fun showReservationScreen() {
+        activity?.startActivity(context?.let { ReservationActivity.getIntent(it) })
     }
 }

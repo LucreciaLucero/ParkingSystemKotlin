@@ -4,6 +4,7 @@ interface ParkingContract {
     interface PresenterContract {
         fun onButtonPressed()
         fun setParkingLots(parkingLots: Int)
+        fun onButtonReservationPressed()
     }
 
     interface ModelContract {
@@ -14,5 +15,6 @@ interface ParkingContract {
     interface ViewContract {
         fun showDialogParkingsAvailable()
         fun showMessageOfParkingLots(parkingsAvailable: Int)
+        fun showReservationScreen()
     }
 }

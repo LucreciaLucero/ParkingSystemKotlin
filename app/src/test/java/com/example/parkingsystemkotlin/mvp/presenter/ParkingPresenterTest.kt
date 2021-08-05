@@ -27,6 +27,13 @@ class ParkingPresenterTest {
         verify(view).showMessageOfParkingLots(model.getParkingAvailables())
     }
 
+    @Test
+    fun `on button reservation pressed test`() {
+        presenter.onButtonReservationPressed()
+
+        verify(view).showReservationScreen()
+    }
+
     companion object {
         private const val PARKING_LOTS: Int = 10
     }
